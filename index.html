@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ayush Yadav : North Indian Cuisine</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        background-color: #a31111;
+        color: yellowgreen;
+      }
+
+      #sidebar {
+        width: 250px;
+        background-color: black;
+        color: white;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+        padding: 20px;
+      }
+
+      #sidebar h1 {
+        color: white;
+      }
+
+      #sidebar a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      #sidebar a:hover {
+        background-color: #444;
+      }
+
+      #main-content {
+        margin-left: 250px;
+        padding: 20px;
+        flex: 1;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+      
+      .restaurant-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      
+      #specials-tile {
+        display: inline-block;
+        padding: 20px 40px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      
+      #specials-tile:hover {
+        background-color: #0056b3;
+      }
+      
+      footer {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      footer .text-center {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sidebar">
+      <h1>THE NORTH INDIAN CUISINE</h1>
+      <a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a>
+      <a href="#" onclick="$dc.loadMenuCategories();"><span class="glyphicon glyphicon-cutlery"></span> Menu</a>
+      <a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a>
+      <a href="#"><span class="glyphicon glyphicon-certificate"></span> Awards</a>
+      <a href="tel:410-602-5008"><span class="glyphicon glyphicon-earphone"></span> 410-602-5008</a>
+    </div>
+
+    <div id="main-content">
+      <header>
+        <div class="container">
+          <img src="https://foodbuddies.in/wp-content/uploads/2024/02/Fssai-300x118.png" alt="Kosher certification">
+          <p>Indian Government Certified</p>
+        </div>
+      </header>
+
+      <div id="content" class="container">
+        <!-- Add your main content here -->
+        <p>Welcome to the best North Indian Cuisine!</p>
+        <a id="specials-tile" href="#">Check Our Specials</a>
+      </div>
+
+      <footer>
+        <div class="container">
+          <div class="row">
+            <section id="hours" class="col-sm-4">
+              <span>Hours:</span><br>
+              Sun-Thurs: 11:15am - 10:00pm<br>
+              Fri: 11:15am - 2:30pm<br>
+              Saturday Closed
+              <hr class="visible-xs">
+            </section>
+            <section id="address" class="col-sm-4">
+              <span>Address:</span><br>
+              Varanasi, Uttar Pradesh<br>
+              221002
+              <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+              <hr class="visible-xs">
+            </section>
+            <section id="testimonials" class="col-sm-4">
+              <p>"The best North Indian restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
+              <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+            </section>
+          </div>
+          <div class="text-center">&copy; Copyright North Indian Cuisine 2024</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- jQuery (Bootstrap JS plugins depend on it) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var categories = ["L", "D", "S", "A"]; // Replace with actual category short names
+        var randomCategoryShortName = categories[Math.floor(Math.random() * categories.length)];
+        
+        var specialsTile = document.getElementById("specials-tile");
+        if (specialsTile) {
+          specialsTile.onclick = function () {
+            $dc.loadMenuItems(randomCategoryShortName); // Replace with the actual function to load menu items
+          };
+        }
+      });
+    </script>
+  </body>
+</html>
